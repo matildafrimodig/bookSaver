@@ -1,26 +1,61 @@
 img {
-    width: 100px;
-
+  width: 100px;
 }
 
 .form-control {
-  width: 20%;
+}
+
+.search-field {
+  padding-bottom: 40px;
 }
 
 .content {
   display: grid;
   grid-template-columns: 70% 30%;
   grid-template-rows: 1fr;
-  grid-template-areas: "header header"
-                        "search read";
-                   
+  grid-template-areas:
+    "header header"
+    "search read";
+}
 
+.book {
+  padding-bottom: 10px;
 }
 
 .search {
   grid-area: search;
+  padding: 50px;
+  width: 75%;
 }
 
 .readList {
   grid-area: read;
+  padding: 50px;
+  background-color: rgba(211, 211, 211, 0.516);
+}
+
+h1 {
+  text-align: center;
+  padding: 30px;
+  font-weight: bold;
+
+  color: white;
+  background-color: #7c6c5e;
+}
+
+@media screen and (max-width: 900px) {
+  .readList {
+    width: 100%;
+    display: none;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    /* grid-template-areas: "search"; */
+  }
+
+  .search {
+    width: 100%;
+  }
 }

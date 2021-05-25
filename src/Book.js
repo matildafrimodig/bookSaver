@@ -34,14 +34,14 @@ export default function Book(props) {
   };
 
   return (
-    <Media as="li">
-      <img src={props.book.cover} />
+    <Media className="book" as="li">
+      <img src={props.book.cover} className="mr-3" alt="Book cover" />
       <Media.Body>
         <h3>{props.book.title}</h3>
         <p>{"av " + props.book.author}</p>
         <p>{"publicerad " + props.book.date}</p>
       </Media.Body>
-      <Button size="sm" onClick={saveToReadList}>
+      <Button size="sm" variant="outline-dark" onClick={saveToReadList}>
         Add to read list
       </Button>
     </Media>

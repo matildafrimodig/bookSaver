@@ -20,14 +20,14 @@ export default function SavedBook(props) {
 
   return (
     <div>
-      <Media as="li">
-        <img src={props.book.cover} />
+      <Media className="book" as="li">
+        <img src={props.book.cover} className="mr-3" alt="Book cover" />
         <Media.Body>
-          <h3>{props.book.title}</h3>
+          <h4>{props.book.title}</h4>
           <p>{"av " + props.book.author}</p>
           <p>{"publicerad " + props.book.date}</p>
         </Media.Body>
-        <Button size="sm" onClick={removeFromReadList}>
+        <Button variant="danger" size="sm" onClick={removeFromReadList}>
           Remove
         </Button>
       </Media>
