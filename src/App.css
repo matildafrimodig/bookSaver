@@ -2,11 +2,12 @@ img {
   width: 100px;
 }
 
-.form-control {
-}
-
 .search-field {
   padding-bottom: 40px;
+}
+
+.mobileMenu {
+  display: none;
 }
 
 .content {
@@ -23,18 +24,20 @@ img {
 }
 
 .search {
+  display: block;
   grid-area: search;
   padding: 50px;
   width: 75%;
 }
 
 .readList {
+  display: block;
   grid-area: read;
   padding: 50px;
   background-color: rgba(211, 211, 211, 0.516);
 }
 
-h1 {
+.header {
   text-align: center;
   padding: 30px;
   font-weight: bold;
@@ -44,9 +47,24 @@ h1 {
 }
 
 @media screen and (max-width: 900px) {
+
+  .mobileMenu {
+    display: block;
+    
+  }
+
   .readList {
     width: 100%;
-    display: none;
+  }
+
+  
+
+  .mobileMenu > .btn {
+    width: 50%;
+    background-color:#f4f1ea;
+    border-radius: 0%;
+    color: #7c6c5e;
+    height: 50px;
   }
 
   .content {
@@ -58,4 +76,9 @@ h1 {
   .search {
     width: 100%;
   }
+
+  .mobileHidden {
+    display: none;
+  }
+  
 }

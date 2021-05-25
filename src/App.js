@@ -37,32 +37,31 @@ function App() {
   };
 
   const toggleSearch = () => {
-    console.log(searchRef.current.style.display);
-    if (searchRef.current.style.display === "none") {
-      searchRef.current.style.display = "";
-    } else {
-      searchRef.current.style.display = "none";
-    }
+    searchRef.current.className = "search mobileShow"
+    readRef.current.className = "readList mobileHidden";
   };
 
   const toggleReadList = () => {
-    if (searchRef.current.style.display === "none") {
-      searchRef.current.style.display = "";
-    } else {
-      searchRef.current.style.display = "none";
-    }
+    readRef.current.className = "readList mobileShow"
+    searchRef.current.className = "search mobileHidden";
+
   };
 
   return (
     <div>
-      <h1>BOOOKSAVER</h1>
-      {showReadingList ? <p>Hello</p> : null}
-      <Button variant="secondary" onClick={toggleSearch}>
-        Search
-      </Button>
-      <Button variant="secondary" onClick={toggleReadList}>
-        Readlist
-      </Button>
+      <div className="header">
+        <h1>BOOOKSAVER</h1>
+        
+        
+      </div>     
+      <div className="mobileMenu">
+          <Button variant="secondary" onClick={toggleSearch}>
+          Show Search
+          </Button>
+          <Button variant="secondary" onClick={toggleReadList}>
+          Show Read List
+         </Button>
+        </div> 
       <div className="content">
         <div className="search" ref={searchRef}>
           <h2>Find New Books!</h2>
@@ -72,7 +71,7 @@ function App() {
             updateSavedBooks={updateSavedBooks}
           ></SearchList>
         </div>
-        <div className="readList" ref={readRef}>
+        <div className="readList mobileHidden" ref={readRef}>
           <h2>Reading List</h2>
           <ReadingList
             savedBooks={savedBooks}
