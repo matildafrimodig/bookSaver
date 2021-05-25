@@ -1,16 +1,36 @@
-import React from 'react'
-import ListGroup from "react-bootstrap/ListGroup"
+import React from "react";
+import ListGroup from "react-bootstrap/ListGroup";
+import Media from "react-bootstrap/Media";
+import Button from "react-bootstrap/Button";
 
 export default function SavedBook(props) {
-    return (
-        <div>
-            <ListGroup.Item className="list-group-item">
-                <span >{props.book.title}</span>
-                <span>{props.book.author}</span>
-                <span>{props.book.date}</span>
-                <img src={props.book.cover} />
-                {/* <Button onClick={saveToReadList}>Add to read list</Button> */}
-            </ListGroup.Item>
-        </div>
-    )
+  function removeFromReadList() {
+    let list = JSON.parse(localStorage.getItem("readList"));
+
+    list = list.filter((book) => book.id !== props.book.id);
+
+    localStorage.setItem("readList", JSON.stringify(list));
+
+    if (localStorage.getItem("readList") === "") {
+      localStorage.removeItem("readList");
+    }
+
+    props.updateSavedBooks();
+  }
+
+  return (
+    <div>
+      <Media as="li">
+        <img src={props.book.cover} />
+        <Media.Body>
+          <h3>{props.book.title}</h3>
+          <p>{"av " + props.book.author}</p>
+          <p>{"publicerad " + props.book.date}</p>
+        </Media.Body>
+        <Button size="sm" onClick={removeFromReadList}>
+          Remove
+        </Button>
+      </Media>
+    </div>
+  );
 }
