@@ -10,7 +10,7 @@ export default function Book(props) {
       jsonBooks = JSON.parse(jsonBooks);
     } else {
       jsonBooks = [];
-      
+
     }
 
     if (jsonBooks.find((jB) => jB.id === props.book.id) !== undefined) {
