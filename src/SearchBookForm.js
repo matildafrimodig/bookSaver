@@ -8,9 +8,7 @@ export default function SearchBookForm(props) {
   const titleRef = useRef();
   const authorRef = useRef();
 
-  const Search = (offset) => {
-    console.log(titleRef.current.value);
-    console.log(authorRef.current.value);
+  const Search = () => {
 
     const title = titleRef.current.value;
     const author = authorRef.current.value;
@@ -34,7 +32,6 @@ export default function SearchBookForm(props) {
     }
 
     axios.get(url).then((res) => {
-      console.log(res.data.items);
 
       if (res.data.items === undefined) {
         alert("No books matched your search terms. Please try again.");
@@ -58,8 +55,6 @@ export default function SearchBookForm(props) {
           });
         }
       });
-
-      console.log(books);
 
       props.setSearchedBooks(books);
     });

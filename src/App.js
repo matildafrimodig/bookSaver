@@ -18,13 +18,8 @@ function App() {
 
   const [searchedBooks, setSearchedBooks] = useState([]);
   const [savedBooks, setSavedBooks] = useState(initializeLocalStorage());
-  const [showReadingList, setShowReadingList] = useState(true);
   const searchRef = useRef();
   const readRef = useRef();
-
-  const printBooks = () => {
-    console.log(searchedBooks);
-  };
 
   const updateSavedBooks = () => {
     const books = JSON.parse(localStorage.getItem("readList"));
@@ -51,8 +46,6 @@ function App() {
     <div>
       <div className="header">
         <h1>BOOKSAVER</h1>
-        
-        
       </div>     
       <div className="mobileMenu">
           <Button variant="secondary" onClick={toggleSearch}>

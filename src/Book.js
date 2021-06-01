@@ -1,6 +1,5 @@
 import Button from "react-bootstrap/Button";
 import React from "react";
-import ListGroup from "react-bootstrap/ListGroup";
 import Media from "react-bootstrap/Media";
 
 export default function Book(props) {
@@ -9,11 +8,9 @@ export default function Book(props) {
 
     if (jsonBooks != null) {
       jsonBooks = JSON.parse(jsonBooks);
-      console.log("jsonBook är inte null");
     } else {
       jsonBooks = [];
-      console.log("jsonBook är null");
-      console.log(props.book.id);
+      
     }
 
     if (jsonBooks.find((jB) => jB.id === props.book.id) !== undefined) {

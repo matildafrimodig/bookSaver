@@ -27,7 +27,6 @@ img {
   display: block;
   grid-area: search;
   padding: 50px;
-  width: 75%;
 }
 
 .readList {
@@ -43,7 +42,6 @@ img {
   text-align: center;
   padding: 30px;
   font-weight: bold;
-
   color: white;
   background-color: #7c6c5e;
 }
@@ -58,8 +56,6 @@ img {
   .readList {
     width: 100%;
   }
-
-  
 
   .mobileMenu > .btn {
     width: 50%;
