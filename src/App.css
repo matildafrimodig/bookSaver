@@ -12,7 +12,7 @@ img {
 
 .content {
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 60% 40%;
   grid-template-rows: 1fr;
   grid-template-areas:
     "header header"
@@ -35,6 +35,8 @@ img {
   grid-area: read;
   padding: 50px;
   background-color: rgba(211, 211, 211, 0.516);
+  min-height: 90vh;
+  min-width: 400px;
 }
 
 .header {
