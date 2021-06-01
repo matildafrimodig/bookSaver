@@ -28,4 +28,5 @@ React is also recommended when building small scale projects with simple front-e
 ### References
 
 [1] https://blog.techmagic.co/reactjs-vs-angular-vs-vuejs-what-to-choose-in-2020/ 
+
 [2] https://www.c-sharpcorner.com/article/what-and-why-reactjs/ 
