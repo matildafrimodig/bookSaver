@@ -32,37 +32,38 @@ function App() {
   };
 
   const toggleSearch = () => {
-    searchRef.current.className = "search mobileShow"
+    searchRef.current.className = "search mobileShow";
     readRef.current.className = "readList mobileHidden";
   };
 
   const toggleReadList = () => {
-    readRef.current.className = "readList mobileShow"
+    readRef.current.className = "readList mobileShow";
     searchRef.current.className = "search mobileHidden";
-
   };
 
   return (
     <div>
       <div className="header">
         <h1>BOOKSAVER</h1>
-      </div>     
+      </div>
       <div className="mobileMenu">
-          <Button variant="secondary" onClick={toggleSearch}>
+        <Button variant="secondary" onClick={toggleSearch}>
           Show Search
-          </Button>
-          <Button variant="secondary" onClick={toggleReadList}>
+        </Button>
+        <Button variant="secondary" onClick={toggleReadList}>
           Show Read List
-         </Button>
-        </div> 
+        </Button>
+      </div>
       <div className="content">
         <div className="search" ref={searchRef}>
-          <h2>Find New Books!</h2>
-          <SearchBookForm setSearchedBooks={setSearchedBooks} />
-          <SearchList
-            searchedBooks={searchedBooks}
-            updateSavedBooks={updateSavedBooks}
-          ></SearchList>
+          <div className="inner-search">
+            <h2>Find New Books!</h2>
+            <SearchBookForm setSearchedBooks={setSearchedBooks} />
+            <SearchList
+              searchedBooks={searchedBooks}
+              updateSavedBooks={updateSavedBooks}
+            ></SearchList>
+          </div>
         </div>
         <div className="readList mobileHidden" ref={readRef}>
           <h2>Reading List</h2>

@@ -47,19 +47,20 @@ img {
 }
 
 @media screen and (max-width: 900px) {
-
   .mobileMenu {
     display: block;
-    
   }
 
   .readList {
     width: 100%;
+    padding: 5px;
+    min-width: 0px;
+    grid-area: none;
   }
 
   .mobileMenu > .btn {
     width: 50%;
-    background-color:#f4f1ea;
+    background-color: #f4f1ea;
     border-radius: 0%;
     color: #7c6c5e;
     height: 50px;
@@ -68,15 +69,25 @@ img {
   .content {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    /* grid-template-areas: "search"; */
+    display: block;
   }
 
   .search {
     width: 100%;
+    padding: 5px;
   }
 
   .mobileHidden {
     display: none;
   }
-  
+}
+
+@media screen and (max-width: 600px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  img {
+    width: 70px;
+  }
 }
