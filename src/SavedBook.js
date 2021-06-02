@@ -23,8 +23,8 @@ export default function SavedBook(props) {
         <img src={props.book.cover} className="mr-3" alt="Book cover" />
         <Media.Body>
           <h4>{props.book.title}</h4>
-          <p>{"av " + props.book.author}</p>
-          <p>{"publicerad " + props.book.date}</p>
+          <p>{"by " + props.book.author}</p>
+          <p>{"published " + props.book.date}</p>
         </Media.Body>
         <Button variant="danger" size="sm" onClick={removeFromReadList}>
           Remove
